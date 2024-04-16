@@ -1,0 +1,3831 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../api-pulseecho-data/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>Fundamentals - Pyintegrity documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pyintegrity documentation" class="md-header__button md-logo" aria-label="Pyintegrity documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pyintegrity documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pyintegrity documentation" class="md-nav__button md-logo" aria-label="Pyintegrity documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Pyintegrity documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Fundamentals
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Fundamentals
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-unit-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic unit tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic unit tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.Quantity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.Unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.helpers.to_quantity" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_quantity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Log information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logparameter.LogParameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      LogParameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel" class="md-nav__link">
+    <span class="md-ellipsis">
+      LogChannel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LogChannel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.array" class="md-nav__link">
+    <span class="md-ellipsis">
+      array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.f" class="md-nav__link">
+    <span class="md-ellipsis">
+      f
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.phi" class="md-nav__link">
+    <span class="md-ellipsis">
+      phi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.t" class="md-nav__link">
+    <span class="md-ellipsis">
+      t
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.z" class="md-nav__link">
+    <span class="md-ellipsis">
+      z
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      copy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.equalize_by_percentiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      equalize_by_percentiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.get_depth_section" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_depth_section
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.interpolate_to" class="md-nav__link">
+    <span class="md-ellipsis">
+      interpolate_to
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.plot_in" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.to" class="md-nav__link">
+    <span class="md-ellipsis">
+      to
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.to_numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_numpy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Containers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Material">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material.density" class="md-nav__link">
+    <span class="md-ellipsis">
+      density
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material.impedance" class="md-nav__link">
+    <span class="md-ellipsis">
+      impedance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material.speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material.get_depth_section" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_depth_section
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.casing.Casing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Casing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.casing.Casing.inner_diameter_nominal" class="md-nav__link">
+    <span class="md-ellipsis">
+      inner_diameter_nominal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.casing.Casing.inner_radius_nominal" class="md-nav__link">
+    <span class="md-ellipsis">
+      inner_radius_nominal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.casing.Casing.outer_diameter_nominal" class="md-nav__link">
+    <span class="md-ellipsis">
+      outer_diameter_nominal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-pulseecho-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pulse-echo data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-pulseecho-processing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pulse-echo processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-pulseecho-simulations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pulse-echo simulations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-unit-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic unit tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic unit tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.Quantity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.Unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.helpers.to_quantity" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_quantity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Log information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logparameter.LogParameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      LogParameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel" class="md-nav__link">
+    <span class="md-ellipsis">
+      LogChannel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LogChannel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.array" class="md-nav__link">
+    <span class="md-ellipsis">
+      array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.f" class="md-nav__link">
+    <span class="md-ellipsis">
+      f
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.phi" class="md-nav__link">
+    <span class="md-ellipsis">
+      phi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.t" class="md-nav__link">
+    <span class="md-ellipsis">
+      t
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.z" class="md-nav__link">
+    <span class="md-ellipsis">
+      z
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      copy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.equalize_by_percentiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      equalize_by_percentiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.get_depth_section" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_depth_section
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.interpolate_to" class="md-nav__link">
+    <span class="md-ellipsis">
+      interpolate_to
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.plot_in" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.to" class="md-nav__link">
+    <span class="md-ellipsis">
+      to
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.logchannel.LogChannel.to_numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_numpy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Containers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Material">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material.density" class="md-nav__link">
+    <span class="md-ellipsis">
+      density
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material.impedance" class="md-nav__link">
+    <span class="md-ellipsis">
+      impedance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material.speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.material.Material.get_depth_section" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_depth_section
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.casing.Casing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Casing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.casing.Casing.inner_diameter_nominal" class="md-nav__link">
+    <span class="md-ellipsis">
+      inner_diameter_nominal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.casing.Casing.inner_radius_nominal" class="md-nav__link">
+    <span class="md-ellipsis">
+      inner_radius_nominal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyintegrity.casing.Casing.outer_diameter_nominal" class="md-nav__link">
+    <span class="md-ellipsis">
+      outer_diameter_nominal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="fundamentals">Fundamentals</h1>
+<p>These are the fundamental classes and functions used by Pyintegrity.</p>
+<h2 id="basic-unit-tools">Basic unit tools</h2>
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pyintegrity.Quantity" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">pyintegrity</span><span class="o">.</span><span class="n">Quantity</span> <span class="o">=</span> <span class="n">pint</span><span class="o">.</span><span class="n">Quantity</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents first">
+  </div>
+
+</div><p>Pyintegrity uses the Pint library's <code>Quantity</code> object to provide numerical values or arrays with physical units. <code>pyintegrity.Quantity</code> should be used instead of <code>pint.Quantity</code>, as the former supports a few additional units that are used in ultrasonic well logs.</p>
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="pyintegrity.Unit" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">pyintegrity</span><span class="o">.</span><span class="n">Unit</span> <span class="o">=</span> <span class="n">pint</span><span class="o">.</span><span class="n">Unit</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents first">
+  </div>
+
+</div><p>Similarly to <code>pyintegrity.Quantity</code>, <code>pyintegrity.Unit</code> should be used in place of <code>pint.Unit</code> if necessary. However, it is usually more convenient to use strings to represent units when building <code>Quantity</code> objects.</p>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="pyintegrity.helpers.to_quantity" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">pyintegrity</span><span class="o">.</span><span class="n">helpers</span><span class="o">.</span><span class="n">to_quantity</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">target_units</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Returns the input value as a pint Quantity with a particular set of units</p>
+<p>If the input value is a number or an array, it is assumed to already be in the target units, which are applied
+directly to return a <code>Quantity</code>. If the input value is already a <code>Quantity</code>, the value are converted to the target
+units. Unlike basic pint unit conversions, this function also supports reciprocal unit conversion, for example when
+converting from slownesses in e.g. µs/ft to speeds in e.g. m/s: <code>to_quantity(Quantity(203.2, 'µs/ft'), 'm/s')</code>.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>value</code></td>
+          <td>
+                <code><span title="typing.Union">Union</span>[float, <span title="numpy.ndarray">ndarray</span>, <a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a>, <span title="dlisio.dlis.Parameter">Parameter</span>, <a class="autorefs autorefs-internal" title="pyintegrity.logchannel.LogChannel" href="#pyintegrity.logchannel.LogChannel">LogChannel</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The input value to be assigned the target units</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>target_units</code></td>
+          <td>
+                <code>str | <a class="autorefs autorefs-internal" title="pyintegrity.Unit" href="#pyintegrity.Unit">Unit</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The target units to be assigned to the input value. <code>None</code> implies no unit conversion.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>RuntimeError</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If an input <code>Quantity</code> cannot be converted to the target units</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A <code>Quantity</code> object with the target units</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/pyintegrity/helpers.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_quantity</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Quantity</span><span class="p">,</span> <span class="n">dlis</span><span class="o">.</span><span class="n">Parameter</span><span class="p">,</span> <span class="s1">&#39;LogChannel&#39;</span><span class="p">],</span> 
+                <span class="n">target_units</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Unit</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the input value as a pint Quantity with a particular set of units</span>
+
+<span class="sd">    If the input value is a number or an array, it is assumed to already be in the target units, which are applied</span>
+<span class="sd">    directly to return a `Quantity`. If the input value is already a `Quantity`, the value are converted to the target</span>
+<span class="sd">    units. Unlike basic pint unit conversions, this function also supports reciprocal unit conversion, for example when</span>
+<span class="sd">    converting from slownesses in e.g. µs/ft to speeds in e.g. m/s: `to_quantity(Quantity(203.2, &#39;µs/ft&#39;), &#39;m/s&#39;)`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value: The input value to be assigned the target units</span>
+<span class="sd">        target_units: The target units to be assigned to the input value. `None` implies no unit conversion.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        RuntimeError: If an input `Quantity` cannot be converted to the target units</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A `Quantity` object with the target units</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.logchannel</span> <span class="kn">import</span> <span class="n">LogChannel</span>  <span class="c1">#pylint: disable=import-outside-toplevel; done to avoid a circular import</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dlis</span><span class="o">.</span><span class="n">Parameter</span><span class="p">):</span>   <span class="c1"># Must convert to a Quantity with the original units</span>
+        <span class="n">number</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">value</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">units</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">attic</span><span class="p">[</span><span class="s1">&#39;VALUES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">units</span>
+        <span class="k">if</span> <span class="n">units</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">Quantity</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">units</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="n">Quantity</span><span class="p">(</span><span class="n">units</span><span class="p">)</span>   <span class="c1"># To handle units like &quot;0.1 in&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">Quantity</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">LogChannel</span><span class="p">):</span>   <span class="c1"># Must convert to a Quantity with the original units</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">array</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Quantity</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">target_units</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="c1"># Convert to the target units, taking the reciprocal if necessary</span>
+        <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">is_compatible_with</span><span class="p">(</span><span class="n">target_units</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">target_units</span><span class="p">)</span>   <span class="c1"># type: ignore[return-value]</span>
+        <span class="k">if</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">value</span><span class="o">.</span><span class="n">units</span><span class="p">)</span><span class="o">.</span><span class="n">is_compatible_with</span><span class="p">(</span><span class="n">target_units</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">target_units</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cannot convert Quantity with units </span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">units</span><span class="si">}</span><span class="s1"> to units </span><span class="si">{</span><span class="n">target_units</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Quantity</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">target_units</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div><h2 id="log-information">Log information</h2>
+<p>In a well log file on the DLIS format, the majority of information is provided as log parameters and log channels. Pyintegrity has internal representations for these types of objects.</p>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="pyintegrity.logparameter.LogParameter" class="doc doc-heading">
+          <code>pyintegrity.logparameter.LogParameter</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>Log parameter container class</p>
+<p>Each <code>LogParameter</code> has a name (aka mnemonic), a description (aka long name), and a set of values. The number of
+values per parameter is arbitrary; for 0 values, we store <code>None</code>, for 1 value, we store the value itself, and for
+more values, we store them in an array. Values can have several types, but most are numbers with units (stored as
+<code>Quantity</code> objects) or strings.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>parameter</code></td>
+          <td>
+                <code><span title="dlisio.dlis.Parameter">Parameter</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DLIS parameter to extract data from</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="pyintegrity.logparameter.LogParameter.name">name</span></code></td>
+          <td>
+                <code>str | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the log parameter, typically a DLIS mnemonic</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="pyintegrity.logparameter.LogParameter.description">description</span></code></td>
+          <td>
+                <code>str | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Description of the log parameter, typically from a DLIS file</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="pyintegrity.logparameter.LogParameter.values">values</span></code></td>
+          <td>
+                <code><span title="typing.Any">Any</span> | list[<span title="typing.Any">Any</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The parameter value(s)</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src/pyintegrity/logparameter.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">LogParameter</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Log parameter container class</span>
+
+<span class="sd">    Each `LogParameter` has a name (aka mnemonic), a description (aka long name), and a set of values. The number of</span>
+<span class="sd">    values per parameter is arbitrary; for 0 values, we store `None`, for 1 value, we store the value itself, and for</span>
+<span class="sd">    more values, we store them in an array. Values can have several types, but most are numbers with units (stored as</span>
+<span class="sd">    `Quantity` objects) or strings.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        parameter: DLIS parameter to extract data from</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        name (str | None): Name of the log parameter, typically a DLIS mnemonic</span>
+<span class="sd">        description (str | None): Description of the log parameter, typically from a DLIS file</span>
+<span class="sd">        values (Any | list[Any]): The parameter value(s)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter</span><span class="p">:</span> <span class="n">dlis</span><span class="o">.</span><span class="n">Parameter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">parameter</span><span class="o">.</span><span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">parameter</span><span class="o">.</span><span class="n">long_name</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parameter</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span> <span class="n">parameter</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">):</span>   <span class="c1"># Parameter values are strings</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">parameter</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parameter</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">parameter</span><span class="o">.</span><span class="n">values</span>
+        <span class="k">else</span><span class="p">:</span>   <span class="c1"># Parameter values are numbers, possibly with units</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">to_quantity</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">Quantity</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="si">:</span><span class="s1">~P</span><span class="si">}</span><span class="s1"> [</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s1">]&#39;</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>   <span class="c1"># Format ~P fails for e.g. units dB/m</span>
+                <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="si">:</span><span class="s1">P</span><span class="si">}</span><span class="s1"> [</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s1">]&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="si">}</span><span class="s1"> [</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s1">]&#39;</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="pyintegrity.logchannel.LogChannel" class="doc doc-heading">
+          <code>pyintegrity.logchannel.LogChannel</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>Multidimensional log channel data</p>
+<p>The log channel can have 1-3 dimensions. The first is always depth (<code>z</code>), and the two others can be angle (<code>phi</code>)
+and either time (<code>t</code>) or frequency (<code>f</code>). The mandatory order is depth-angle-time/frequency. Thus, <code>LogChannel</code> can
+store depth-only channels (e.g., CBL), depth-angle channels (e.g., outer impedance maps), depth-time channels (e.g.,
+VDL), depth-angle-time channels (e.g., pulse-echo waveforms), and depth-angle-frequency channels (e.g., pulse-echo
+waveforms frequency spectra).</p>
+<p>Internally, the log channel is stored as an <code>xarray.DataArray</code>, made unit-aware by the pint-xarray package. Because
+getting the axes from such <code>DataArray</code> objects is not entirely straightforward, the <code>LogChannel</code> defines properties
+to get the depth (<code>z</code>), angle (<code>phi</code>), time (<code>t</code>), or frequency (<code>f</code>) axis. The underlying array of the <code>DataArray</code>
+is always a <code>pint.Quantity</code>, whether the log channel has units or not, and can be accessed through the <code>array</code>
+property.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>data</code></td>
+          <td>
+                <code><span title="numpy.ndarray">ndarray</span> | <a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The underlying array; dimensions must be ordered as depth-angle-time</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>z</code></td>
+          <td>
+                <code><span title="numpy.ndarray">ndarray</span> | <a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The required depth axis of the log channel</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>phi</code></td>
+          <td>
+                <code><span title="numpy.ndarray">ndarray</span> | <a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The optional angle axis of the log channel</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>t</code></td>
+          <td>
+                <code><span title="numpy.ndarray">ndarray</span> | <a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The optional time axis of the log channel</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>f</code></td>
+          <td>
+                <code><span title="numpy.ndarray">ndarray</span> | <a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The optional frequency axis of the log channel</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="pyintegrity.logchannel.LogChannel.name">name</span></code></td>
+          <td>
+                <code>str | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the log channel, typically a DLIS mnemonic</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="pyintegrity.logchannel.LogChannel.description">description</span></code></td>
+          <td>
+                <code>str | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Description of the log channel, typically from a DLIS file</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="pyintegrity.logchannel.LogChannel.data">data</span></code></td>
+          <td>
+                <code><span title="pyintegrity.xr.DataArray">DataArray</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The underlying data array as an unit-aware <code>xarray.DataArray</code></p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>ValueError</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Issues with the data array dimension order or the data array shape not matching the axes</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src/pyintegrity/logchannel.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">LogChannel</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Multidimensional log channel data</span>
+
+<span class="sd">    The log channel can have 1-3 dimensions. The first is always depth (`z`), and the two others can be angle (`phi`)</span>
+<span class="sd">    and either time (`t`) or frequency (`f`). The mandatory order is depth-angle-time/frequency. Thus, `LogChannel` can</span>
+<span class="sd">    store depth-only channels (e.g., CBL), depth-angle channels (e.g., outer impedance maps), depth-time channels (e.g.,</span>
+<span class="sd">    VDL), depth-angle-time channels (e.g., pulse-echo waveforms), and depth-angle-frequency channels (e.g., pulse-echo</span>
+<span class="sd">    waveforms frequency spectra).</span>
+
+<span class="sd">    Internally, the log channel is stored as an `xarray.DataArray`, made unit-aware by the pint-xarray package. Because</span>
+<span class="sd">    getting the axes from such `DataArray` objects is not entirely straightforward, the `LogChannel` defines properties</span>
+<span class="sd">    to get the depth (`z`), angle (`phi`), time (`t`), or frequency (`f`) axis. The underlying array of the `DataArray`</span>
+<span class="sd">    is always a `pint.Quantity`, whether the log channel has units or not, and can be accessed through the `array`</span>
+<span class="sd">    property.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data: The underlying array; dimensions must be ordered as depth-angle-time</span>
+<span class="sd">        z: The required depth axis of the log channel</span>
+<span class="sd">        phi: The optional angle axis of the log channel</span>
+<span class="sd">        t: The optional time axis of the log channel</span>
+<span class="sd">        f: The optional frequency axis of the log channel</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        name (str | None): Name of the log channel, typically a DLIS mnemonic</span>
+<span class="sd">        description (str | None): Description of the log channel, typically from a DLIS file</span>
+<span class="sd">        data (xr.DataArray): The underlying data array as an unit-aware `xarray.DataArray`</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Issues with the data array dimension order or the data array shape not matching the axes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span><span class="p">,</span>
+                 <span class="n">z</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span><span class="p">,</span>
+                 <span class="n">phi</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">f</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+
+        <span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">f</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;LogChannel got both time and frequency axes&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Ensure that the axes have the correct units</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">to_quantity</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">phi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">Quantity</span><span class="p">):</span>
+            <span class="n">phi</span> <span class="o">=</span> <span class="n">to_quantity</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span> <span class="s1">&#39;deg&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Quantity</span><span class="p">):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">to_quantity</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Quantity</span><span class="p">):</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">to_quantity</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="s1">&#39;Hz&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Ensure that the data array has the right size</span>
+        <span class="n">n_axes</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">phi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">t</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">f</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n_axes</span> <span class="o">&lt;</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;LogChannel got a </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s1">-dimensional data array but only </span><span class="si">{</span><span class="n">n_axes</span><span class="si">}</span><span class="s1"> axes&#39;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_array_to_nd</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">target_ndim</span><span class="o">=</span><span class="n">n_axes</span><span class="p">)</span>
+
+        <span class="c1"># Ensure that the data array is ordered as depth, angle, time/frequency</span>
+        <span class="n">i_dim</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">i_dim</span><span class="p">]</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">axis</span><span class="p">):</span>
+                <span class="n">i_dim</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;data shape </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1"> does not match input axes in depth-angle-time/freq order&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i_dim</span> <span class="o">!=</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;data shape </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1"> does not match input axes in depth-angle-time/freq order&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Build DataArray</span>
+        <span class="n">coords</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Quantity</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">ax</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">)]</span>
+                                       <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+        <span class="n">data_unitless</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">Quantity</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">magnitude</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">coords</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+        <span class="n">data_unitless</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_increasing_coords</span><span class="p">(</span><span class="n">data_unitless</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span> <span class="o">=</span> <span class="n">data_unitless</span><span class="o">.</span><span class="n">pint</span><span class="o">.</span><span class="n">quantify</span><span class="p">({</span><span class="n">name</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">units</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">coords</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get depth axis as a Quantity&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Quantity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">phi</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get angle axis as a Quantity, if it exists&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s1">&#39;phi&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">Quantity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">phi</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">phi</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">t</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get time axis as a Quantity, if it exists&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s1">&#39;t&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">Quantity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get frequency axis as a Quantity, if it exists&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s1">&#39;f&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">Quantity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">array</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the underlying data array&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">units</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Unit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert channel units</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            units: Compatible units to convert to</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pint</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">units</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+    <span class="k">def</span> <span class="nf">to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the underlying data array as a unitless numpy array&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">interpolate_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                       <span class="n">z</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                       <span class="n">phi</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                       <span class="n">t</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                       <span class="n">f</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                       <span class="n">extrapolate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                       <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Interpolate the log channel to a new set of axes</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            z: Optional new depth axis to interpolate to</span>
+<span class="sd">            phi: Optional new angle axis to interpolate to</span>
+<span class="sd">            t: Optional new time axis to interpolate to</span>
+<span class="sd">            f: Optional new frequency axis to interpolate to</span>
+<span class="sd">            extrapolate: When going outside the original axes, whether to fill by edge values (`True`) or NaNs (`False`)</span>
+<span class="sd">            method: Interpolation method to use</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A new LogChannel with the interpolated data</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="s1">&#39;extrapolate&#39;</span><span class="p">}</span> <span class="k">if</span> <span class="n">extrapolate</span> <span class="k">else</span> <span class="p">{</span><span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">}</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">ax</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">)]</span> <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+
+        <span class="n">new</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">new</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pint</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">new</span>
+
+    <span class="k">def</span> <span class="nf">plot_in</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                <span class="n">ax</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
+                <span class="n">z</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">phi</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">t</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">f</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;nearest&#39;</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot log channel data</span>
+
+<span class="sd">        The arguments `z`, `phi`, `t`, and `f` can be used to reduce the dimensionality of the data before plotting or</span>
+<span class="sd">        to select a subset for plotting.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ax: matplotlib `Axes` to plot into</span>
+<span class="sd">            z: Optional depths to select before plotting</span>
+<span class="sd">            phi: Optional angles to select before plotting</span>
+<span class="sd">            t: Optional times to select before plotting</span>
+<span class="sd">            f: Optional frequencies to select before plotting</span>
+<span class="sd">            method: Selection method</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Whatever `xarray.DataArray.plot` returns</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">ax</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">)]</span> <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pint</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+
+        <span class="c1"># Specify some reasonable plot defaults</span>
+        <span class="k">if</span> <span class="s1">&#39;z&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>   <span class="c1"># The data is indexed by depth</span>
+            <span class="k">if</span> <span class="s1">&#39;yincrease&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;yincrease&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>   <span class="c1"># Make sure depth increases downwards</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s1">&#39;y&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span>   <span class="c1"># 1D line plot; make sure depth is on the y axis</span>
+
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make a shallow copy of the object with a deep copy of the data array&quot;&quot;&quot;</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">new</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">new</span>
+
+    <span class="k">def</span> <span class="nf">get_depth_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">bottom</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a copy which only contains data in the specified interval of the depth axis</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            top: Start of depth interval, in m</span>
+<span class="sd">            bottom: End of depth interval, in m</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A copy of this `LogChannel` containing only an interval of the original depth axis</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">channel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">channel</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">channel</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">channel</span>
+
+    <span class="k">def</span> <span class="nf">equalize_by_percentiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                              <span class="n">reference</span><span class="p">:</span> <span class="s1">&#39;LogChannel&#39;</span><span class="p">,</span>
+                              <span class="n">percentiles</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">75</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a copy which has been equalized with a reference according to the values at the specified percentiles</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            reference: Reference `LogChannel` to equalize with</span>
+<span class="sd">            percentiles: Percentiles to equalize values at</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A new and equalized `LogChannel`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">percentiles</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+        <span class="n">values_ref</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">)</span>
+        <span class="n">values_self</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">)</span>
+
+        <span class="n">out_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">-</span> <span class="n">values_self</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">out_array</span> <span class="o">=</span> <span class="n">out_array</span> <span class="o">/</span> <span class="p">(</span><span class="n">values_self</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">values_self</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">values_ref</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">values_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">out_array</span> <span class="o">=</span> <span class="n">out_array</span> <span class="o">+</span> <span class="n">values_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">out_channel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">out_channel</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">out_array</span>
+        <span class="k">return</span> <span class="n">out_channel</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_array_to_nd</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span><span class="p">,</span> <span class="n">target_ndim</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return array with new dimensions filled in from the start if necessary&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="n">target_ndim</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Got a </span><span class="si">{</span><span class="n">array</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s1">-dimensional data array with a target of </span><span class="si">{</span><span class="n">target_ndim</span><span class="si">}</span><span class="s1"> dimensions&#39;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&lt;</span> <span class="n">target_ndim</span><span class="p">:</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="k">return</span> <span class="n">array</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_ensure_increasing_coords</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ensure that the axes are all in increasing order, to avoid later problems with slicing order&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">coord_name</span><span class="p">,</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>   <span class="c1"># Coordinate is just one point</span>
+                <span class="k">continue</span> 
+            <span class="k">if</span> <span class="n">coord</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">coord</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>   <span class="c1"># Coordinate axis is in decreasing order (assuming monotonic coords)</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">isel</span><span class="p">({</span><span class="n">coord_name</span><span class="p">:</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)})</span>   <span class="c1"># Reverse coordinates to get increasing order</span>
+        <span class="k">return</span> <span class="n">data</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.array" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">array</span><span class="p">:</span> <span class="n">Quantity</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the underlying data array</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.f" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">f</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get frequency axis as a Quantity, if it exists</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.phi" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">phi</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get angle axis as a Quantity, if it exists</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.t" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">t</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get time axis as a Quantity, if it exists</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.z" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">z</span><span class="p">:</span> <span class="n">Quantity</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get depth axis as a Quantity</p>
+  </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.copy" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">copy</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Make a shallow copy of the object with a deep copy of the data array</p>
+
+          <details class="quote">
+            <summary>Source code in <code>src/pyintegrity/logchannel.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Make a shallow copy of the object with a deep copy of the data array&quot;&quot;&quot;</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="n">new</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">new</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.equalize_by_percentiles" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">equalize_by_percentiles</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">percentiles</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">75</span><span class="p">))</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a copy which has been equalized with a reference according to the values at the specified percentiles</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>reference</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.logchannel.LogChannel" href="#pyintegrity.logchannel.LogChannel">LogChannel</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Reference <code>LogChannel</code> to equalize with</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>percentiles</code></td>
+          <td>
+                <code>tuple[float, float]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Percentiles to equalize values at</p>
+            </div>
+          </td>
+          <td>
+                <code>(25, 75)</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.Self">Self</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A new and equalized <code>LogChannel</code></p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/pyintegrity/logchannel.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">equalize_by_percentiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                          <span class="n">reference</span><span class="p">:</span> <span class="s1">&#39;LogChannel&#39;</span><span class="p">,</span>
+                          <span class="n">percentiles</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">75</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a copy which has been equalized with a reference according to the values at the specified percentiles</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        reference: Reference `LogChannel` to equalize with</span>
+<span class="sd">        percentiles: Percentiles to equalize values at</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A new and equalized `LogChannel`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">percentiles</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="n">values_ref</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">reference</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">)</span>
+    <span class="n">values_self</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">)</span>
+
+    <span class="n">out_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">-</span> <span class="n">values_self</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">out_array</span> <span class="o">=</span> <span class="n">out_array</span> <span class="o">/</span> <span class="p">(</span><span class="n">values_self</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">values_self</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">values_ref</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">values_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">out_array</span> <span class="o">=</span> <span class="n">out_array</span> <span class="o">+</span> <span class="n">values_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">out_channel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">out_channel</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">out_array</span>
+    <span class="k">return</span> <span class="n">out_channel</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.get_depth_section" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_depth_section</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a copy which only contains data in the specified interval of the depth axis</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>top</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Start of depth interval, in m</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>bottom</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>End of depth interval, in m</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.Self">Self</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A copy of this <code>LogChannel</code> containing only an interval of the original depth axis</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/pyintegrity/logchannel.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_depth_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">bottom</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a copy which only contains data in the specified interval of the depth axis</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        top: Start of depth interval, in m</span>
+<span class="sd">        bottom: End of depth interval, in m</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A copy of this `LogChannel` containing only an interval of the original depth axis</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">channel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">channel</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">channel</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">channel</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.interpolate_to" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">interpolate_to</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">phi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extrapolate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Interpolate the log channel to a new set of axes</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>z</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional new depth axis to interpolate to</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>phi</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional new angle axis to interpolate to</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>t</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional new time axis to interpolate to</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>f</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional new frequency axis to interpolate to</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>extrapolate</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>When going outside the original axes, whether to fill by edge values (<code>True</code>) or NaNs (<code>False</code>)</p>
+            </div>
+          </td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>method</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Interpolation method to use</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;linear&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.Self">Self</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A new LogChannel with the interpolated data</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/pyintegrity/logchannel.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">interpolate_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                   <span class="n">z</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                   <span class="n">phi</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                   <span class="n">t</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                   <span class="n">f</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                   <span class="n">extrapolate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                   <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interpolate the log channel to a new set of axes</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        z: Optional new depth axis to interpolate to</span>
+<span class="sd">        phi: Optional new angle axis to interpolate to</span>
+<span class="sd">        t: Optional new time axis to interpolate to</span>
+<span class="sd">        f: Optional new frequency axis to interpolate to</span>
+<span class="sd">        extrapolate: When going outside the original axes, whether to fill by edge values (`True`) or NaNs (`False`)</span>
+<span class="sd">        method: Interpolation method to use</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A new LogChannel with the interpolated data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="s1">&#39;extrapolate&#39;</span><span class="p">}</span> <span class="k">if</span> <span class="n">extrapolate</span> <span class="k">else</span> <span class="p">{</span><span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">}</span>
+    <span class="n">coords</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">ax</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">)]</span> <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+
+    <span class="n">new</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="n">new</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pint</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.plot_in" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">plot_in</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">phi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Plot log channel data</p>
+<p>The arguments <code>z</code>, <code>phi</code>, <code>t</code>, and <code>f</code> can be used to reduce the dimensionality of the data before plotting or
+to select a subset for plotting.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>ax</code></td>
+          <td>
+                <code><span title="matplotlib.Axes">Axes</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>matplotlib <code>Axes</code> to plot into</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>z</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional depths to select before plotting</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>phi</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional angles to select before plotting</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>t</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional times to select before plotting</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>f</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional frequencies to select before plotting</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>method</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Selection method</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;nearest&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="matplotlib.Axes">Axes</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whatever <code>xarray.DataArray.plot</code> returns</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/pyintegrity/logchannel.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">plot_in</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">ax</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
+            <span class="n">z</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">phi</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">t</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">f</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;nearest&#39;</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot log channel data</span>
+
+<span class="sd">    The arguments `z`, `phi`, `t`, and `f` can be used to reduce the dimensionality of the data before plotting or</span>
+<span class="sd">    to select a subset for plotting.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ax: matplotlib `Axes` to plot into</span>
+<span class="sd">        z: Optional depths to select before plotting</span>
+<span class="sd">        phi: Optional angles to select before plotting</span>
+<span class="sd">        t: Optional times to select before plotting</span>
+<span class="sd">        f: Optional frequencies to select before plotting</span>
+<span class="sd">        method: Selection method</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Whatever `xarray.DataArray.plot` returns</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">coords</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">ax</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">)]</span> <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pint</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+
+    <span class="c1"># Specify some reasonable plot defaults</span>
+    <span class="k">if</span> <span class="s1">&#39;z&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>   <span class="c1"># The data is indexed by depth</span>
+        <span class="k">if</span> <span class="s1">&#39;yincrease&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;yincrease&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>   <span class="c1"># Make sure depth increases downwards</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s1">&#39;y&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span>   <span class="c1"># 1D line plot; make sure depth is on the y axis</span>
+
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.to" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">to</span><span class="p">(</span><span class="n">units</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Convert channel units</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>units</code></td>
+          <td>
+                <code>str | <a class="autorefs autorefs-internal" title="pyintegrity.Unit" href="#pyintegrity.Unit">Unit</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Compatible units to convert to</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/pyintegrity/logchannel.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">units</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Unit</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert channel units</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        units: Compatible units to convert to</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pint</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">units</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="pyintegrity.logchannel.LogChannel.to_numpy" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">to_numpy</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the underlying data array as a unitless numpy array</p>
+
+          <details class="quote">
+            <summary>Source code in <code>src/pyintegrity/logchannel.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the underlying data array as a unitless numpy array&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div><h2 id="containers">Containers</h2>
+<p>These container classes are used for well-related information.</p>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="pyintegrity.material.Material" class="doc doc-heading">
+          <code>pyintegrity.material.Material</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>Contains information on the parameters of a material</p>
+<p>1-3 material parameters may be provided. If 2 are provided, the 3rd parameter can be calculated.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>speed</code></td>
+          <td>
+                <code>float | <span title="numpy.ndarray">ndarray</span> | <a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | <a class="autorefs autorefs-internal" title="pyintegrity.logchannel.LogChannel" href="#pyintegrity.logchannel.LogChannel">LogChannel</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>P-wave speed of the material</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>impedance</code></td>
+          <td>
+                <code>float | <span title="numpy.ndarray">ndarray</span> | <a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | <a class="autorefs autorefs-internal" title="pyintegrity.logchannel.LogChannel" href="#pyintegrity.logchannel.LogChannel">LogChannel</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>P-wave impedance of the material</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>density</code></td>
+          <td>
+                <code>float | <span title="numpy.ndarray">ndarray</span> | <a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | <a class="autorefs autorefs-internal" title="pyintegrity.logchannel.LogChannel" href="#pyintegrity.logchannel.LogChannel">LogChannel</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mass density of the material</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src/pyintegrity/material.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Material</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Contains information on the parameters of a material</span>
+
+<span class="sd">    1-3 material parameters may be provided. If 2 are provided, the 3rd parameter can be calculated.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        speed: P-wave speed of the material</span>
+<span class="sd">        impedance: P-wave impedance of the material</span>
+<span class="sd">        density: Mass density of the material</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">speed</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="n">LogChannel</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">impedance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="n">LogChannel</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">density</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="n">LogChannel</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">speed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">speed</span> <span class="o">=</span> <span class="n">to_quantity</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="s1">&#39;m/s&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span> <span class="o">=</span> <span class="n">speed</span>
+        <span class="k">if</span> <span class="n">impedance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">impedance</span> <span class="o">=</span> <span class="n">to_quantity</span><span class="p">(</span><span class="n">impedance</span><span class="p">,</span> <span class="s1">&#39;MRayl&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span> <span class="o">=</span> <span class="n">impedance</span>
+        <span class="k">if</span> <span class="n">density</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">density</span> <span class="o">=</span> <span class="n">to_quantity</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="s1">&#39;kg/m^3&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_density</span> <span class="o">=</span> <span class="n">density</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">speed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the P-wave speed in m/s, calculating if necessary&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">speed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span>
+            <span class="k">return</span> <span class="n">speed</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">impedance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the P-wave impedance in MRayl, calculating if necessary&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">impedance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span>
+            <span class="k">return</span> <span class="n">impedance</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;MRayl&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">density</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the density in kg/m^3, calculating if necessary&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">density</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span>
+            <span class="k">return</span> <span class="n">density</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;kg/m^3&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">get_depth_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i_start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">i_end</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Material&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a `Material` copy which only contains data in the specified range</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            i_start: Start index of the range</span>
+<span class="sd">            i_end: End index of the range</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A new `Material` containing the data in the specified range</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">speed</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span><span class="p">[</span><span class="n">i_start</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">impedance</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span><span class="p">[</span><span class="n">i_start</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">density</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span><span class="p">[</span><span class="n">i_start</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Material</span><span class="p">(</span><span class="n">speed</span><span class="o">=</span><span class="n">speed</span><span class="p">,</span> <span class="n">impedance</span><span class="o">=</span><span class="n">impedance</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="n">density</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.material.Material.density" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">density</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the density in kg/m^3, calculating if necessary</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.material.Material.impedance" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">impedance</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the P-wave impedance in MRayl, calculating if necessary</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.material.Material.speed" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">speed</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the P-wave speed in m/s, calculating if necessary</p>
+  </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="pyintegrity.material.Material.get_depth_section" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_depth_section</span><span class="p">(</span><span class="n">i_start</span><span class="p">,</span> <span class="n">i_end</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a <code>Material</code> copy which only contains data in the specified range</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>i_start</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Start index of the range</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>i_end</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>End index of the range</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.material.Material" href="#pyintegrity.material.Material">Material</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A new <code>Material</code> containing the data in the specified range</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/pyintegrity/material.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_depth_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i_start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">i_end</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Material&#39;</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a `Material` copy which only contains data in the specified range</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        i_start: Start index of the range</span>
+<span class="sd">        i_end: End index of the range</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A new `Material` containing the data in the specified range</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_speed</span><span class="p">[</span><span class="n">i_start</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+    <span class="n">impedance</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_impedance</span><span class="p">[</span><span class="n">i_start</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+    <span class="n">density</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_density</span><span class="p">[</span><span class="n">i_start</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">Material</span><span class="p">(</span><span class="n">speed</span><span class="o">=</span><span class="n">speed</span><span class="p">,</span> <span class="n">impedance</span><span class="o">=</span><span class="n">impedance</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="n">density</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="pyintegrity.casing.Casing" class="doc doc-heading">
+          <code>pyintegrity.casing.Casing</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>Contains information on a casing</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>material</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.material.Material" href="#pyintegrity.material.Material">Material</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A <code>Material</code> object specifying the casing's material</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>outer_radius_nominal</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A <code>Quantity</code> object with length units describing the nominal outer radius</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>thickness_nominal</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A <code>Quantity</code> object with length units describing the nominal casing thickness</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="pyintegrity.casing.Casing.material">material</span></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.material.Material" href="#pyintegrity.material.Material">Material</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The casing material</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="pyintegrity.casing.Casing.outer_radius_nominal">outer_radius_nominal</span></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The outer radius of the casing</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="pyintegrity.casing.Casing.thickness_nominal">thickness_nominal</span></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="pyintegrity.Quantity" href="#pyintegrity.Quantity">Quantity</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The casing thickness</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src/pyintegrity/casing.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Casing</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Contains information on a casing</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        material: A `Material` object specifying the casing&#39;s material</span>
+<span class="sd">        outer_radius_nominal: A `Quantity` object with length units describing the nominal outer radius</span>
+<span class="sd">        thickness_nominal: A `Quantity` object with length units describing the nominal casing thickness</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        material (Material | None): The casing material</span>
+<span class="sd">        outer_radius_nominal (Quantity | None): The outer radius of the casing</span>
+<span class="sd">        thickness_nominal (Quantity | None): The casing thickness</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">material</span><span class="p">:</span> <span class="n">Material</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">outer_radius_nominal</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">thickness_nominal</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">material</span> <span class="o">=</span> <span class="n">material</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">outer_radius_nominal</span> <span class="o">=</span> <span class="n">outer_radius_nominal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">thickness_nominal</span> <span class="o">=</span> <span class="n">thickness_nominal</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">outer_diameter_nominal</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns nominal outer diameter&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">outer_radius_nominal</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">outer_radius_nominal</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">inner_radius_nominal</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns nominal inner radius&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">outer_radius_nominal</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">thickness_nominal</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">outer_radius_nominal</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">thickness_nominal</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">inner_diameter_nominal</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns nominal inner diameter&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner_radius_nominal</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner_radius_nominal</span> <span class="o">*</span> <span class="mi">2</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.casing.Casing.inner_diameter_nominal" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">inner_diameter_nominal</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns nominal inner diameter</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.casing.Casing.inner_radius_nominal" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">inner_radius_nominal</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns nominal inner radius</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="pyintegrity.casing.Casing.outer_diameter_nominal" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">outer_diameter_nominal</span><span class="p">:</span> <span class="n">Quantity</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns nominal outer diameter</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+    
+  </body>
+</html>
