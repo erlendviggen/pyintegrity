@@ -27,4 +27,4 @@ The included Jupyter Notebook `Pyintegrity demo.ipynb` provides a demonstration 
 
 ## Documentation
 
-Pyintegrity's documentation can be found in the project's GitHub Pages.
+Pyintegrity's documentation can be found at https://erlendviggen.github.io/pyintegrity/.
