@@ -1,0 +1,26 @@
+name: pyintegrity
+channels:
+- conda-forge
+dependencies:
+- python=3.11
+- pip=24.0
+- build=0.7.0
+- numpy=1.26.4
+- scipy=1.12.0
+- matplotlib=3.8.3
+- seaborn=0.13.2
+- ipympl=0.9.3
+- xarray=2024.2.0
+- pint-xarray=0.3
+- numba=0.59.0
+- rocket-fft=0.2.2
+- pytest=8.1.1
+- jupyter=1.0.0
+- pylint=3.1.0
+- mypy=1.9.0
+- nbstripout=0.7.1
+- mkdocs=1.5.3
+- mkdocstrings-python=1.9.0
+- mkdocs-material=9.5.15
+- pip:
+  - dlisio==1.0.1

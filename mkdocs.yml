@@ -1,0 +1,24 @@
+site_name: Pyintegrity documentation
+
+theme:
+  name: "material"
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_root_heading: true
+            show_root_full_path: true
+            heading_level: 3
+
+nav:
+  - Overview: index.md
+  - API reference:
+    - Fundamentals: api-fundamentals.md
+    - Pulse-echo data: api-pulseecho-data.md
+    - Pulse-echo processing: api-pulseecho-processing.md
+    - Pulse-echo simulations: api-pulseecho-simulations.md
